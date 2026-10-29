@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 
+import BackButton from '../components/BackButton';
 import { cores, estilos } from '../styles';
 
 export default function ProfileScreen({ route }) {
@@ -12,6 +13,8 @@ export default function ProfileScreen({ route }) {
       </View>
       <Text style={estilos.titulo}>{nome}</Text>
       <Text style={estilos.subtitulo}>Estudante de {curso}</Text>
+
+      <BackButton />
     </View>
   );
 }

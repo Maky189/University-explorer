@@ -1,5 +1,6 @@
 import { Text, TouchableOpacity, View } from 'react-native';
 
+import BackButton from '../components/BackButton';
 import { estilos } from '../styles';
 
 export default function CourseScreen({ navigation, route }) {
@@ -16,6 +17,8 @@ export default function CourseScreen({ navigation, route }) {
       >
         <Text style={estilos.botaoTexto}>Ver Estudantes</Text>
       </TouchableOpacity>
+
+      <BackButton />
     </View>
   );
 }

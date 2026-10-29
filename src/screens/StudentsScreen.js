@@ -1,5 +1,6 @@
 import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 
+import BackButton from '../components/BackButton';
 import { estilos } from '../styles';
 
 export default function StudentsScreen({ navigation, route }) {
@@ -24,6 +25,8 @@ export default function StudentsScreen({ navigation, route }) {
           </TouchableOpacity>
         )}
       />
+
+      <BackButton />
     </View>
   );
 }

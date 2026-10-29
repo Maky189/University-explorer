@@ -42,6 +42,7 @@ export const estilos = StyleSheet.create({
     padding: 14,
     borderRadius: 10,
     alignItems: 'center',
+    alignSelf: 'stretch',
     marginTop: 12,
   },
   botaoSecundario: {
