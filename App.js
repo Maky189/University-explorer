@@ -1,20 +1,37 @@
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
+import CourseScreen from './src/screens/CourseScreen';
+import HomeScreen from './src/screens/HomeScreen';
+import { cores } from './src/styles';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerStyle: { backgroundColor: cores.primaria },
+            headerTintColor: '#FFFFFF',
+          }}
+        >
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{ title: 'Universidade Explorer' }}
+          />
+          <Stack.Screen
+            name="Curso"
+            component={CourseScreen}
+            options={({ route }) => ({ title: route.params.curso.nome })}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+      <StatusBar style="light" />
+    </GestureHandlerRootView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
